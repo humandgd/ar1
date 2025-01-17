@@ -3,19 +3,31 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene>
-        <!-- ボックス -->
-        <a-box
-          position="0 0.5 -1.5"
-          rotation="0 45 0"
-          width="1"
-          height="1"
-          depth="1"
-          color="#4d7df7"
-        ></a-box>
-    
-        <!-- 背景 -->
-        <a-sky color="#f082ff"></a-sky>
-      </a-scene>
+   <!-- シーン -->
+   <a-scene>
+    <!-- アセット -->
+    <a-assets>
+      <!-- 3Dモデルデータ -->
+      <a-asset-item
+        id="cow-obj"
+        src="./assets/obj/spot_quadrangulated.obj"
+      ></a-asset-item>
+      <!-- マテリアルデータ -->
+      <a-asset-item
+        id="cow-mtl"
+        src="./assets/obj/spot_quadrangulated.mtl"
+      ></a-asset-item>
+    </a-assets>
+
+    <!-- 3Dモデル -->
+    <a-entity
+      obj-model="obj: #cow-obj; mtl: #cow-mtl"
+      position="0 1 -1.5"
+      rotation="0 135 0"
+    ></a-entity>
+
+    <!-- 背景 -->
+    <a-sky color="#fafafa"></a-sky>
+  </a-scene>
   </body>
 </html>
