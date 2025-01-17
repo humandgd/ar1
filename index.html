@@ -3,8 +3,8 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
   </head>
   <body>
-   <!-- シーン -->
-   <a-scene>
+<!-- シーン -->
+<a-scene>
     <!-- アセット -->
     <a-assets>
       <!-- 3Dモデルデータ -->
@@ -22,9 +22,16 @@
     <!-- 3Dモデル -->
     <a-entity
       obj-model="obj: #cow-obj; mtl: #cow-mtl"
-      position="0 1 -1.5"
-      rotation="0 135 0"
-    ></a-entity>
+      position="0 0.5 -1.5"
+      rotation="0 180 0"
+    >
+      <a-animation
+        attribute="rotation"
+        dur="5000"
+        to="0 540 0"
+        repeat="indefinite"
+      ></a-animation>
+    </a-entity>
 
     <!-- 背景 -->
     <a-sky color="#fafafa"></a-sky>
